@@ -1,0 +1,19 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-7">
+        <div class="text-center fc-mydark my-3">
+            <h3>
+                Company Reviews
+            </h3>
+        </div>
+        <div class="container" style="height: 550px; overflow-y: scroll; ">
+            <ul class="list-group" *ngFor="let review of softwareCompanyReviews">
+                <li class="list-group-item d-flex justify-content-between align-items-center" style="height: 70px;">
+                    {{(review.review)? (review.review| slice:0:80)+'...':(review.review)}}
+                    <span class="badge bg-myprimary fc-mydark badge-pill">
+                        {{review.rating.toString()}} stars
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

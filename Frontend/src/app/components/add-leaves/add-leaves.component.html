@@ -1,0 +1,51 @@
+<div class="container mt-5">
+    <div class="container w-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-5">
+                <form class="border border-5 p-5 border" [formGroup]="LeaveRequestForm" (ngSubmit)="onSubmit()">
+                    <h3 class="text-center">
+                        Employee Leave Request
+                    </h3>
+                    <p class="text-center my-3">
+                        Please fill required details for leave request
+                    </p>
+                    <div class="row my-3">
+                        <div class="col">
+                            <label class="form-label" for="empid">Employee Id</label>
+                            <input type="text" readonly id="empid" class="form-control" formControlName="Empid" />
+                        </div>
+                        <div class="col">
+                            <label class="form-label" for="">Leave Type</label>
+                            <select class="form-select" aria-label="Default select example" formControlName="LeaveType">
+                                <option value="HOLIDAY">HOLIDAY</option>
+                                <option value="EMERGENCY">EMERGENCY</option>
+                                <option value="SICK">SICK</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col">
+                            <label class="form-label" for="startdate">From date</label>
+                            <input type="date" id="startdate" class="form-control" formControlName="StartDate" />
+                        </div>
+                        <div class="col">
+                            <label class="form-label" for="enddate">To date</label>
+                            <input type="date" id="enddate" class="form-control" formControlName="EndDate" />
+                        </div>
+                    </div>
+
+                    <div class="row my-3">
+                        <div class="col">
+                            <label class="form-label" for="leavereason">Leave Reason</label>
+                            <input type="text" id="leavereason" class="form-control" formControlName="Reason" />
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <button type="submit" class="btn btn-primary btn-block mb-4 ">Submit Request</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

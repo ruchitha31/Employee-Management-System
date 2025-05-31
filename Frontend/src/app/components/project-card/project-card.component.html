@@ -1,0 +1,44 @@
+<div class="card card-margin" style="height: 250px;">
+    <div class="card-header no-border py-3">
+        <h5 class="card-title">
+            {{projectDetailes.project_name}}
+        </h5>
+    </div>
+    <div class="card-body pt-0">
+        <div class="widget-49">
+            <div class="widget-49-title-wrapper">
+                <div class="widget-49-date-primary">
+                    <span class="widget-49-date-day">
+                        <i class="bi bi-code-square"></i>
+                    </span>
+                </div>
+                <div class="widget-49-meeting-info">
+                    <span class="widget-49-pro-title">
+                        {{projectDetailes.project_status}}
+                    </span>
+                    <span class="widget-49-meeting-time">
+                        {{projectDetailes.completed_story_points}} of {{projectDetailes.total_story_points}}
+                    </span>
+                </div>
+            </div>
+            <div class="widget-49-meeting-points mt-3 " style="height: 50px;">
+                {{projectDetailes.project_description| slice:0:100}}
+            </div>
+            <div *ngIf="!isAdmin" class="widget-49-meeting-action">
+                <a href="#" class="btn btn-sm btn-flash-border-primary">View All</a>
+            </div>
+            <div *ngIf="isAdmin" class="widget-49-meeting-action">
+                <span>
+                    <div class="btn" (click)="Delete(projectDetailes)">
+                        <i class="bi bi-trash fs-4 text-danger"></i>
+                    </div>
+                </span>
+                <span>
+                    <div class="btn" (click)="Edit(projectDetailes)">
+                        <i class="bi bi-pencil-square fs-4"></i>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
